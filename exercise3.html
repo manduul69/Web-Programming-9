@@ -1,1 +1,40 @@
-   <!-- Write your code here -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .box {
+        background-color: rgb(255, 10, 10);
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Add me</button>
+    <script>
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        console.log(Math.random());
+        let para = document.createElement("div");
+        para.classList.add("box");
+        para.style.backgroundColor = `rgb(${r},${g},${b})`;
+        para.addEventListener("click", () => {
+          document.body.removeChild(para);
+        });
+        document.body.appendChild(para);
+      });
+    </script>
+  </body>
+</html>
